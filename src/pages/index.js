@@ -1,14 +1,32 @@
 import React from "react"
+import { Link } from "gatsby"
 // import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import HomeBanner from "../components/home-banner"
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <Layout>
-      <Seo title="home" />
-      <HomeBanner />
+      <Seo title="Welcome" />
+      <h1>Welcome</h1>
+      {/* TODO: create Navbar */}
+      <ul>
+        <li><Link to="/home">home</Link></li>
+        <li><Link to="/support">support</Link></li>
+        <ul>
+          <li><Link to="/support/outside-montreal">Outside Montreal</Link></li>
+        </ul>
+        <li><Link to="/get-involved">get-involved</Link></li>
+        <ul>
+          <li><Link to="/get-involved/training">Organizational Training</Link></li>
+          <li><Link to="/get-involved/advocacy">Advocacy</Link></li>
+        </ul>
+
+        <li><Link to="/about">about</Link></li>
+        <li><Link to="/donate">donate</Link></li>
+        <li><Link to="/contact">contact</Link></li>
+        <li><Link to="/privacy">privacy</Link></li>
+      </ul>
     </Layout>
   )
 }
