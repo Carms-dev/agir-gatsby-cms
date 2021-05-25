@@ -1,51 +1,51 @@
 # Sitemap
 
-1. Landing
+#### 1. Landing
 
 /
 
-2. Home
+#### 2. Home
 
 /home
 
-3. Get Support (parent)
+#### 3. Get Support (parent)
 
 /support
 
-4. Outside Montreal (child)
+#### 4. Outside Montreal (child)
 
 /support/outside-montreal
 
-5. Get Involved (parent)
+#### 5. Get Involved (parent)
 
 /get-involved
 
-6. Organizational Training (child)
+#### 6. Organizational Training (child)
 
 /get-involved/training
 
-7. Advocacy (child)
+#### 7. Advocacy (child)
 
 /get-involved/advocacy 
 
 
-8. About Us
+#### 8. About Us
 
 /about
 
-9. Donate
+#### 9. Donate
 
 /donate
 
-10. Contact Us
+#### 10. Contact Us
 
 /contact
 
-11. 404 Page
+#### 11. 404 Page
 
 /404
 
-12. Privacy Policy
+#### 12. Privacy Policy
 
 /policy
 
