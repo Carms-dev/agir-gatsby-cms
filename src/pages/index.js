@@ -5,11 +5,11 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 export default function LandingPage() {
+
   return (
     <Layout>
       <Seo title="Welcome" />
       <h1>Welcome</h1>
-      {/* TODO: create Navbar */}
       <ul>
         <li><Link to="/home">home</Link></li>
         <li><Link to="/support">support</Link></li>
