@@ -38,11 +38,11 @@ const Header = () => {
   return (
     <AppBar position="static" style={{ background: `var(--off-white)` }}>
       <Toolbar>
-        <Container maxWidth="md" className={classes.navbarDisplayFlex}>
+        <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
           <IconButton edge="start" color="inherit" aria-label="home" href="/home">
             <Logo />
           </IconButton>
-          <Hidden smDown>
+          <Hidden mdDown>
             <List
               component="nav"
               aria-labelledby="main navigation"
@@ -58,7 +58,7 @@ const Header = () => {
             </List>
           </Hidden>
 
-          <Hidden mdUp>
+          <Hidden lgUp>
             <SideDrawer navLinks={navLinks} />
           </Hidden>
         </Container>
