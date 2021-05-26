@@ -37,7 +37,7 @@ const Header = () => {
     <AppBar position="static" style={{ background: `white` }}>
       <Toolbar>
         <Container maxWidth="md" className={classes.navbarDisplayFlex}>
-          <IconButton edge="start" color="inherit" aria-label="home">
+          <IconButton edge="start" color="inherit" aria-label="home" href="/home">
             <Logo />
           </IconButton>
           <Hidden smDown>
