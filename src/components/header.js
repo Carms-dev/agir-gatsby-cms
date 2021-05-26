@@ -1,39 +1,70 @@
-import  React from "react"
+import * as React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import TemporaryDrawer from "./drawer"
+import { AppBar, Toolbar } from "@material-ui/core"
+import { IconButton, List, ListItem, ListItemText, Container, Hidden } from "@material-ui/core"
+import Logo from "./logo"
+import { makeStyles } from "@material-ui/core"
+import SideDrawer from "./side-drawer"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-        display: `flex`,
-        justifyContent: `space-between`
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <TemporaryDrawer />
-    </div>
-  </header>
-)
+const useStyles = makeStyles({
+  navbarDisplayFlex: {
+    display: `flex`,
+    justifyContent: `space-between`,
+    alignItems: `center`
+  },
+  navDisplayFlex: {
+    display: `flex`,
+    justifyContent: `space-between`
+  },
+  linkText: {
+    textDecoration: `none`,
+    color: `black`
+  }
+});
+
+const navLinks = [
+  { title: `About Us`, path: `/about` },
+  { title: `Get Support`, path: `/support` },
+  { title: `Get Involved`, path: `/get-involved` },
+  { title: `Donate`, path: `/donate` },
+  { title: `Contact Us`, path: `/contact` },
+]
+
+const Header = () => {
+  const classes = useStyles();
+
+  return (
+    <AppBar position="static" style={{ background: `white` }}>
+      <Toolbar>
+        <Container maxWidth="md" className={classes.navbarDisplayFlex}>
+          <IconButton edge="start" color="inherit" aria-label="home">
+            <Logo />
+          </IconButton>
+          <Hidden smDown>
+            <List
+              component="nav"
+              aria-labelledby="main navigation"
+              className={classes.navDisplayFlex}
+            >
+              {navLinks.map(({ title, path }) => (
+                <a href={path} key={title} className={classes.linkText}>
+                  <ListItem button>
+                    <ListItemText primary={title} />
+                  </ListItem>
+                </a>
+              ))}
+            </List>
+          </Hidden>
+
+          <Hidden mdUp>
+            <SideDrawer navLinks={navLinks} />
+          </Hidden>
+        </Container>
+
+      </Toolbar>
+    </AppBar>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
