@@ -1,18 +1,24 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
+import TransitionsModal from './TransitionsModal'
+
 import CloseIcon from '@material-ui/icons/Close';
 import { IconButton } from '@material-ui/core';
 
-export default function AnnouncementBar() {
+
+export default function AnnouncementBar( { announcement } ) {
   const [open, setOpen] = useState(true)
 
   return (
-    <AnnouncementBarStyles style={ { display: open ? `block` : `none` } }>
-      {/* TODO: Content to be fetched thru GraphQL */}
-      <Link to="/">Covid-19 Service Update</Link>
+    <AnnouncementBarStyles style={ { display: open ? `flex` : `none` } }>
+      <p class="mr-2">{announcement.announcementTitle}</p>
+      <TransitionsModal 
+        modalButtonText={announcement.announcementLinkText} 
+        modalTitle={announcement.announcementTitle} 
+        modalContentHTML={announcement.announcementPopup } />
+
       <IconButton
-        edge="false"
+        edge="start"
         aria-label="close"
         onClick={() => setOpen(false)}
       >
@@ -27,7 +33,9 @@ const AnnouncementBarStyles = styled.div`
   position: relative;
   text-align: center;
   padding: 12px;
-  button {
+  justify-content: center;
+
+  button[aria-label="close"] {
     position: absolute;
     top: 50%;
     right: 0;
