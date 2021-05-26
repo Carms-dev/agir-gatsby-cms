@@ -18,6 +18,6 @@
 //     font-family: 'Young Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 //   }
 
-// `;
+// `
 
-// export default Typography;
+// export default Typography

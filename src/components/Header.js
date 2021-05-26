@@ -1,10 +1,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+
+import Logo from "./Logo"
+import SideDrawer from "./SideDrawer"
+
 import { AppBar, Toolbar } from "@material-ui/core"
 import { IconButton, List, ListItem, ListItemText, Container, Hidden } from "@material-ui/core"
-import Logo from "./logo"
 import { makeStyles } from "@material-ui/core"
-import SideDrawer from "./side-drawer"
 
 const useStyles = makeStyles({
   navbarDisplayFlex: {
@@ -34,7 +36,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" style={{ background: `white` }}>
+    <AppBar position="static" style={{ background: `var(--off-white)` }}>
       <Toolbar>
         <Container maxWidth="md" className={classes.navbarDisplayFlex}>
           <IconButton edge="start" color="inherit" aria-label="home" href="/home">

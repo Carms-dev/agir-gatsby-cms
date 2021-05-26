@@ -2,10 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
-import MainHero from "../components/main-hero"
+import MainHero from "../components/MainHero"
 
 export default function AboutPage() {
   const { wpPage: { mainHero : { heroHeading, heroDescription, heroImage }}} = useStaticQuery(
