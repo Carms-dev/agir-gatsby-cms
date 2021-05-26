@@ -17,9 +17,7 @@ export default function AboutPage() {
             heroDescription
             heroImage {
               altText
-              sourceUrl
               localFile {
-                publicURL
                 childImageSharp {
                   gatsbyImageData(
                     width: 800,
