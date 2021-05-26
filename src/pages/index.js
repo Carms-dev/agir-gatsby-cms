@@ -1,15 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 // import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
 export default function LandingPage() {
+
   return (
     <Layout>
       <Seo title="Welcome" />
       <h1>Welcome</h1>
-      {/* TODO: create Navbar */}
       <ul>
         <li><Link to="/home">home</Link></li>
         <li><Link to="/support">support</Link></li>
@@ -46,8 +46,8 @@ export default function LandingPage() {
 // import { Link } from "gatsby"
 // import { StaticImage } from "gatsby-plugin-image"
 
-// import Layout from "../components/layout"
-// import Seo from "../components/seo"
+// import Layout from "../components/Layout"
+// import Seo from "../components/Seo"
 
 // const IndexPage = () => (
 //   <Layout>

@@ -4,6 +4,8 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --black: #2E2E2E;
     --white: #fff;
+    --off-white: #FFFBF3;
+    --primary-light: #FDE8CE;
   }
   * {
     box-sizing: border-box;
@@ -22,6 +24,6 @@ const GlobalStyles = createGlobalStyle`
   button:focus, button:hover {
     outline: none;
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles
