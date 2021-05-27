@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export default function SocialMediaIcons({ socialMedia }) {
   return (
-    <SmIconsStyle>
+    <SmIconsStyles>
       {socialMedia.map(media => (
         <a href={media.url} key={media.url}>
           <GatsbyImage
@@ -13,8 +13,8 @@ export default function SocialMediaIcons({ socialMedia }) {
           />
         </a>
       ))}
-    </SmIconsStyle>
+    </SmIconsStyles>
   )
 }
 
-const SmIconsStyle = styled.div``
+const SmIconsStyles = styled.div``
