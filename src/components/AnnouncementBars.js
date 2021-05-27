@@ -20,8 +20,6 @@ export default function AnnouncementBars() {
   `)
 
   const announcements = nodes
-  console.log(announcements)
-
   return (
     <>
       {announcements.map(a => <AnnouncementBar key={a.id} announcement={a.announcementBar} /> )}

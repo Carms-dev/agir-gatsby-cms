@@ -5,8 +5,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import ReactHtmlParser from 'react-html-parser';
 
-
-
 const useStyles = makeStyles(() => ({
   btnModal: {
     color: `var(--primary-alt)`,
