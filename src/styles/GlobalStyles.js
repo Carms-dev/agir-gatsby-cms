@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --off-white: #FFFBF3;
     --primary-light: #FDE8CE;
+    --primary-alt: #C44D1D;
   }
   * {
     box-sizing: border-box;

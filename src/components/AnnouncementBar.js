@@ -10,7 +10,7 @@ export default function AnnouncementBar( { announcement } ) {
   const [open, setOpen] = useState(true)
 
   return (
-    <AnnouncementBarStyles style={ { display: open ? `flex` : `none` } }>
+    <AnnouncementBarStyles style={ { display: open ? `flex` : `none`, background: announcement.backgroundColor } }>
       <p class="mr-2">{announcement.announcementTitle}</p>
       <TransitionsModal 
         modalButtonText={announcement.announcementLinkText} 

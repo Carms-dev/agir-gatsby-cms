@@ -8,6 +8,10 @@ import ReactHtmlParser from 'react-html-parser';
 
 
 const useStyles = makeStyles(() => ({
+  btnModal: {
+    color: `var(--primary-alt)`,
+    borderBottom: `2px solid var(--primary-alt)`,
+  },
   modal: {
     display: 'flex',
     alignItems: 'center',
@@ -45,7 +49,7 @@ export default function TransitionsModal({ modalButtonText, modalTitle, modalCon
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
+      <button type="button" onClick={handleOpen} className={classes.btnModal}>
         {modalButtonText}
       </button>
       <Modal

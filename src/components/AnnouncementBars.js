@@ -11,6 +11,7 @@ export default function AnnouncementBars() {
             announcementLinkText
             announcementPopup
             announcementTitle
+            backgroundColor
           }
           id
         }
