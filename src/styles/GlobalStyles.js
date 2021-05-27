@@ -15,8 +15,10 @@ const GlobalStyles = createGlobalStyle`
   }
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-weight: bold;
   }
   a {
+    font-weight: bold;
     text-decoration: none;
   }
   button:focus, button:hover {
@@ -27,6 +29,18 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 16px;
     background: #F6F1E5;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
   }
   @media (min-width: 640px) {
     font-size: 16px;
@@ -39,19 +53,6 @@ const GlobalStyles = createGlobalStyle`
     h1 {
       font-size: 2.25rem;
     }
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
   }
 `
 
