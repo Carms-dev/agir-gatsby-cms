@@ -13,10 +13,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  html {
-    font-size: 16px;
-    background: #F6F1E5;
-  }
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
@@ -25,6 +21,37 @@ const GlobalStyles = createGlobalStyle`
   }
   button:focus, button:hover {
     outline: none;
+  }
+
+  // font sizes
+  html {
+    font-size: 16px;
+    background: #F6F1E5;
+  }
+  @media (min-width: 640px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
   }
 `
 
