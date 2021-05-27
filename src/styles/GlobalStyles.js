@@ -15,11 +15,14 @@ const GlobalStyles = createGlobalStyle`
   }
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
   }
   a {
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
+  }
+  button {
+    font-weight: 500;
   }
   button:focus, button:hover {
     outline: none;
