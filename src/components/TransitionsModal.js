@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import ReactHtmlParser from 'react-html-parser';
+
+
 
 const useStyles = makeStyles(() => ({
   modal: {
@@ -14,6 +17,17 @@ const useStyles = makeStyles(() => ({
     backgroundColor: `var(--off-white)`,
     border: '2px solid #000',
     padding: `20px`,
+    margin: `20px`,
+    '& h2': {
+      fontSize: `1.75rem`,
+      marginBottom: `12px`,
+    },
+    '& p': {
+      marginBottom: `6px`,
+    },
+    '& ul': {
+      listStyle: `inside`,
+    },
   },
 }));
 
@@ -49,8 +63,9 @@ export default function TransitionsModal({ modalButtonText, modalTitle, modalCon
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">{modalTitle}</h2>
-            {modalContentHTML}
-            {/* <span id="transition-modal-description"></span> */}
+            <div id="transition-modal-description">
+              { ReactHtmlParser(modalContentHTML) }
+            </div>
           </div>
         </Fade>
       </Modal>
