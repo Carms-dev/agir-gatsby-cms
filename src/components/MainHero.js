@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-export default function MainHero({ heroHeading, heroDescription, heroImage }) {
+export default function MainHero({ hero: { heroHeading, heroDescription, heroImage } }) {
   return (
     <MainHeroStyles>
       <GatsbyImage
