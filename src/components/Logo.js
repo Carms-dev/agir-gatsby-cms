@@ -27,6 +27,8 @@ export default function Logo() {
   return (
       <GatsbyImage
         image={siteLogo.localFile.childImageSharp.gatsbyImageData}
-        alt={siteLogo.altText} />
+        alt={siteLogo.altText}
+        imgStyle={{width: `auto`}}
+      />
   )
 }

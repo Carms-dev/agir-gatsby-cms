@@ -37,10 +37,10 @@ export default function SideDrawer({ navLinks }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List component="nav">
-        {navLinks.map(({ title, path }) => (
-          <a href={path} key={title} className={classes.linkText}>
+        {navLinks.map(({ id, label, path }) => (
+          <a href={path} key={id} className={classes.linkText}>
             <ListItem button>
-              <ListItemText primary={title} />
+              <ListItemText primary={label} />
             </ListItem>
           </a>
         ))}
@@ -60,7 +60,6 @@ export default function SideDrawer({ navLinks }) {
       <Drawer
         anchor="right"
         open={state.right}
-        onOpen={toggleDrawer("right", true)}
         onClose={toggleDrawer("right", false)}
       >
         {sideDrawerList("right")}

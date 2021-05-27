@@ -3,7 +3,8 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import GlobalStyles from "../styles/GlobalStyles"
-import AnnouncementBar from "./AnnouncementBar"
+import SiteBorderStyles from "../styles/SiteBorderStyles"
+import AnnouncementBars from "./AnnouncementBars"
 import Header from "./Header"
 import Footer from "./Footer"
 
@@ -21,10 +22,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <AnnouncementBar />
+      <AnnouncementBars />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main>{children}</main>
-      <Footer />
+      <SiteBorderStyles>
+        <main>{children}</main>
+        <Footer />
+      </SiteBorderStyles>
     </>
   )
 }

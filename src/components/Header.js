@@ -1,5 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Logo from "./Logo"
 import SideDrawer from "./SideDrawer"
@@ -24,41 +25,50 @@ const useStyles = makeStyles({
   }
 });
 
-const navLinks = [
-  { title: `About Us`, path: `/about` },
-  { title: `Get Support`, path: `/support` },
-  { title: `Get Involved`, path: `/get-involved` },
-  { title: `Donate`, path: `/donate` },
-  { title: `Contact Us`, path: `/contact` },
-]
-
 const Header = () => {
   const classes = useStyles();
+
+  const { wpMenu: { menuItems } } = useStaticQuery(graphql`
+    query MenuQuery {
+      wpMenu(slug: {eq: "main-menu"}) {
+        menuItems {
+          nodes {
+            id
+            label
+            path
+            parentId
+          }
+        }
+      }
+    }
+  `)
+
+  const navLinks = menuItems.nodes
 
   return (
     <AppBar position="static" style={{ background: `var(--off-white)` }}>
       <Toolbar>
-        <Container maxWidth="md" className={classes.navbarDisplayFlex}>
+        <Container maxWidth="lg" className={classes.navbarDisplayFlex}>
           <IconButton edge="start" color="inherit" aria-label="home" href="/home">
             <Logo />
           </IconButton>
-          <Hidden smDown>
+          <Hidden mdDown>
             <List
               component="nav"
               aria-labelledby="main navigation"
               className={classes.navDisplayFlex}
             >
-              {navLinks.map(({ title, path }) => (
-                <a href={path} key={title} className={classes.linkText}>
+              {navLinks.map(({ id, label, path }) => (
+                <a href={path} key={id} className={classes.linkText}>
                   <ListItem button>
-                    <ListItemText primary={title} />
+                    <ListItemText primary={label} />
                   </ListItem>
                 </a>
               ))}
             </List>
           </Hidden>
 
-          <Hidden mdUp>
+          <Hidden lgUp>
             <SideDrawer navLinks={navLinks} />
           </Hidden>
         </Container>
