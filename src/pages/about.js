@@ -8,10 +8,11 @@ import Seo from "../components/Seo"
 import MainHero from "../components/MainHero"
 
 export default function AboutPage() {
-  const { wpPage: { mainHero : { heroHeading, heroDescription, heroImage }}} = useStaticQuery(
+  const { wpPage: { title, mainHero } } = useStaticQuery(
     graphql`
       query {
         wpPage(title: {eq: "About"}) {
+          title
           mainHero {
             heroHeading
             heroDescription
@@ -36,11 +37,8 @@ export default function AboutPage() {
 
   return (
     <Layout>
-      <Seo title="Home | AGIR Montreal" />
-      <MainHero 
-        heroHeading={heroHeading} 
-        heroDescription={heroDescription}
-        heroImage={heroImage} />
+      <Seo title={title} />
+      <MainHero hero={mainHero} />
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )

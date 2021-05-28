@@ -8,34 +8,30 @@ import SocialMediaIcons from './SocialMediaIcons'
 
 export default function Footer() {
   // get contact info from contact page
-  const { allWpPage: { nodes } } = useStaticQuery(graphql`
+  const { wpPage: { contactPage: { address, socialMedia } } } = useStaticQuery(graphql`
     query {
-      allWpPage(filter: {title: {eq: "Contact"}}) {
-        nodes {
-          contactInfo {
-            address
-            socialMedia {
-              icon {
-                altText
-                localFile {
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 30,
-                      placeholder: BLURRED
-                      layout: CONSTRAINED
-                    )
-                  }
+      wpPage(title: {eq: "Contact"}) {
+        contactPage {
+          address
+          socialMedia {
+            icon {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 30,
+                    placeholder: BLURRED
+                    layout: CONSTRAINED
+                  )
                 }
               }
-              url
             }
+            url
           }
         }
       }
     }
   `)
-
-  const { contactInfo: { address, socialMedia } } = nodes[0]
 
   return (
     <FooterStyles>
@@ -44,7 +40,7 @@ export default function Footer() {
       {/* TODO: add switcher */}
       <LanguageSwitcher />
       <Link to="/contact">Contact us</Link>
-      <SocialMediaIcons socialMedia={socialMedia}/>
+      <SocialMediaIcons socialMedia={socialMedia} />
       <p>
         <span>© AGIR, {new Date().getFullYear()}.{` `}</span>
         <Link to="/privacy">Privacy policy</Link>

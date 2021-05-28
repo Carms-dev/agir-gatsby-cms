@@ -13,18 +13,49 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 700;
+  }
+  a {
+    font-weight: 500;
+    text-decoration: none;
+  }
+  button {
+    font-weight: 500;
+  }
+  button:focus, button:hover {
+    outline: none;
+  }
+
+  // font sizes
   html {
     font-size: 16px;
     background: #F6F1E5;
   }
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+  h1 {
+    font-size: 2rem;
   }
-  a {
-    text-decoration: none;
+  h2 {
+    font-size: 1.75rem;
   }
-  button:focus, button:hover {
-    outline: none;
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  @media (min-width: 640px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
+    h1 {
+      font-size: 2.25rem;
+    }
   }
 `
 

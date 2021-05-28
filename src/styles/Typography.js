@@ -1,23 +1,30 @@
-// import { createGlobalStyle } from 'styled-components';
-// import st from '../assets/fonts/ShareTech-Regular.ttf';
-// import ys from '../assets/fonts/YoungSerif-Regular.ttf';
+import { createGlobalStyle } from 'styled-components';
+import TajawalRegular from '../assets/fonts/Tajawal/Tajawal-Regular.ttf'
+import TajawalMedium from '../assets/fonts/Tajawal/Tajawal-Medium.ttf'
+import TajawalBold from '../assets/fonts/Tajawal/Tajawal-Bold.ttf'
 
-// const Typography = createGlobalStyle`
-//   @font-face {
-//     font-family: "Share Tech";
-//     src: url(${st});
-//   }
-//   @font-face {
-//     font-family: "Young Serif";
-//     src: url(${ys});
-//   }
-//   html {
-//     font-family: 'Share Tech', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-//   }
-//   h1, h2, h3 {
-//     font-family: 'Young Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-//   }
+const Typography = createGlobalStyle`
+  @font-face {
+    font-family: "Tajawal";
+    src: url(${TajawalRegular});
+    font-weight: 400;
+  }
 
-// `
+  @font-face {
+    font-family: "Tajawal";
+    src: url(${TajawalMedium});
+    font-weight: 500;
+  }
 
-// export default Typography
+  @font-face {
+    font-family: "Tajawal";
+    src: url(${TajawalBold});
+    font-weight: 700;
+  }
+
+  html {
+    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`
+
+export default Typography
