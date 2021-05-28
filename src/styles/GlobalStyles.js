@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   :root {
     --black: #2E2E2E;
+    --darker: #474335;
     --white: #fff;
     --off-white: #FFFBF3;
     --primary-light: #FDE8CE;
@@ -10,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
+    color: var(--darker);
     margin: 0;
     padding: 0;
   }

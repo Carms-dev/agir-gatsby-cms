@@ -14,6 +14,7 @@ export default function Footer() {
         contactPage {
           address
           socialMedia {
+            url
             icon {
               altText
               localFile {
@@ -26,7 +27,6 @@ export default function Footer() {
                 }
               }
             }
-            url
           }
         }
       }
