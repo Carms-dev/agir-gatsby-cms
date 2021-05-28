@@ -30,13 +30,18 @@ const GlobalStyles = createGlobalStyle`
     outline: none;
   }
 
+  // Section
+  section {
+    margin: 5rem 0;
+  }
+
   // font sizes
   html {
     font-size: 16px;
     background: #F6F1E5;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   h2 {
     font-size: 1.75rem;
@@ -54,9 +59,6 @@ const GlobalStyles = createGlobalStyle`
   @media (min-width: 1024px) {
     html {
       font-size: 18px;
-    }
-    h1 {
-      font-size: 2.25rem;
     }
   }
 `

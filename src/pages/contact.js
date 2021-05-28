@@ -14,20 +14,51 @@ export default function ContactPage({ data: { wpPage } }) {
   return (
     <Layout>
       <Seo title={title} />
-      <ContactPageStyles>
         <MainHero hero={mainHero} />
-        <Accordions
-          heading={contactAccordion.heading}
-          items={contactAccordion.accordionAccordionItem} />
-        {ReactHtmlParser(map)}
-      </ContactPageStyles>
+        <AcoordionsIframeSectionStyles>
+          <Accordions
+            heading={contactAccordion.heading}
+            items={contactAccordion.accordionAccordionItem}
+          />
+          <div className="wrapper-iframe">{ReactHtmlParser(map)}</div>
+        </AcoordionsIframeSectionStyles>
     </Layout>
   )
 }
 
-const ContactPageStyles = styled.div``
+const AcoordionsIframeSectionStyles = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center center;
 
-// Query for contact page content
+  .wrapper-iframe {
+    margin: 20px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 62.5%; /* 8:5 Aspect Ratio */
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (min-width: 640px) {
+    grid-template-columns: 60% 40%;
+  }
+
+  @media (min-width: 1280px) {
+  }
+`
+
+// Query contact page content
 export const query = graphql`
   query {
     wpPage(title: {eq: "Contact"}) {

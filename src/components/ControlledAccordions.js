@@ -19,8 +19,9 @@ const useStyles = makeStyles(() => ({
     border: `none`,
     borderBottom: `1px solid var(--darker)`,
   },
-  heading: {
+  MuiAccordionSummaryroot: {
     fontWeight: `700`,
+    padding: `0`,
   },
 }));
 
@@ -45,6 +46,7 @@ export default function ControlledAccordions({ items }) {
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`panel${index}bh-content`}
             id={`panel${index}bh-header`}
+            className={classes.MuiAccordionSummaryroot}
           >
             <Typography className={classes.heading}>{item.heading}</Typography>
           </AccordionSummary>
