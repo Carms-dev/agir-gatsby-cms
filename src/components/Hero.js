@@ -2,22 +2,22 @@ import * as React from "react"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-export default function MainHero({ hero: { heroHeading, heroDescription, heroImage } }) {
+export default function Hero({ hero: { heading, description, image } }) {
   return (
-    <MainHeroStyles>
+    <HeroStyles>
       <GatsbyImage
-        image={heroImage.localFile.childImageSharp.gatsbyImageData}
-        alt={heroImage.altText}
+        image={image.localFile.childImageSharp.gatsbyImageData}
+        alt={image.altText}
         imgStyle={{ height: `auto` }} />
       <div>
-        <h1>{heroHeading}</h1>
-        <p>{heroDescription}</p>
+        <h1>{heading}</h1>
+        <p>{description}</p>
       </div>
-    </MainHeroStyles>
+    </HeroStyles>
   )
 }
 
-const MainHeroStyles = styled.div`
+const HeroStyles = styled.section`
   display: flex;
   flex-direction: column;
   padding: 20px 0;
@@ -36,7 +36,7 @@ const MainHeroStyles = styled.div`
     text-align: left;
 
     div:last-child {
-      margin-right: 5vw; // TODO: adjust based on css strategy.
+      margin-right: 5vw;
     }
   }
 

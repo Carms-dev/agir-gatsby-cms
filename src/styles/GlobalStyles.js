@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     --off-white: #FFFBF3;
     --primary-light: #FDE8CE;
     --primary-alt: #C44D1D;
+    --background: #F6F1E5;
   }
   * {
     box-sizing: border-box;
@@ -32,13 +33,12 @@ const GlobalStyles = createGlobalStyle`
 
   // Section
   section {
-    margin: 5rem 0;
+    margin: 2rem 0;
   }
-
   // font sizes
   html {
     font-size: 16px;
-    background: #F6F1E5;
+    background: var(--background);
   }
   h1 {
     font-size: 2.25rem;
@@ -53,7 +53,12 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
   }
   @media (min-width: 640px) {
-    font-size: 16px;
+    section {
+      margin: 5rem 0;
+    }
+    html {
+      font-size: 16px;
+    }
   }
 
   @media (min-width: 1024px) {

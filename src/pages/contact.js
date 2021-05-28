@@ -5,16 +5,16 @@ import styled from 'styled-components';
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import MainHero from "../components/MainHero"
+// import Hero from "../components/Hero"
 import Accordions from "../components/Accordions"
 
 export default function ContactPage({ data: { wpPage } }) {
-  const { title, mainHero, contactPage: { contactAccordion , map} } = wpPage
+  const { title, contactPage: { contactAccordion , map} } = wpPage
 
   return (
     <Layout>
       <Seo title={title} />
-        <MainHero hero={mainHero} />
+        {/* <Hero hero={hero}/> */}
         <AcoordionsIframeSectionStyles>
           <Accordions
             heading={contactAccordion.heading}
@@ -63,22 +63,6 @@ export const query = graphql`
   query {
     wpPage(title: {eq: "Contact"}) {
       title
-      mainHero {
-        heroHeading
-        heroDescription
-        heroImage {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 800,
-                placeholder: BLURRED
-                layout: CONSTRAINED
-              )
-            }
-          }
-        }
-      }
       contactPage {
         map
         contactAccordion {
