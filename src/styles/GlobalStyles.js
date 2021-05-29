@@ -36,6 +36,9 @@ const GlobalStyles = createGlobalStyle`
 
   // Section
   section {
+    margin: 3rem 0;
+  }
+  .wrapper {
     margin: 2rem 0;
   }
   // font sizes
@@ -54,6 +57,7 @@ const GlobalStyles = createGlobalStyle`
   }
   p {
     font-size: 1rem;
+    white-space: pre-wrap;
   }
   .btn {
     text-align: center;
@@ -72,6 +76,9 @@ const GlobalStyles = createGlobalStyle`
   @media (min-width: 640px) {
     section {
       margin: 5rem 0;
+    }
+    .wrapper {
+      margin: 4rem 0;
     }
     html {
       font-size: 16px;

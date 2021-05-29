@@ -11,7 +11,7 @@ export default function BeliefSection({ belief: { heading, cards } }) {
   return (
     <BeliefSectionStyles>
       <h2>{heading}</h2>
-      <div className="wrapper-cards">
+      <div className="wrapper wrapper-cards">
         {cards.map((card, index) => {
           const iconColor = (index % 2 === 0 ? iconColors[0] : iconColors[1])
           return (
@@ -27,9 +27,8 @@ export default function BeliefSection({ belief: { heading, cards } }) {
   )
 }
 
-const BeliefSectionStyles = styled.div`
+const BeliefSectionStyles = styled.section`
   .wrapper-cards {
-    margin: 2rem 0;
     display: grid;
     grid-gap: 20px;
   }
@@ -38,8 +37,7 @@ const BeliefSectionStyles = styled.div`
       grid-template-columns: 1fr 1fr;
       grid-auto-rows: 1fr;
       /* TODO: alternate the color of the icons */
-      /* grid-auto-flow: column dense; */
-      margin: 4rem 0;
+      grid-auto-flow: row dense;
     }
   }
 `

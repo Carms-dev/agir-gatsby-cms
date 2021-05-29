@@ -7,9 +7,10 @@ import Seo from "../components/Seo"
 import Hero from "../components/Hero"
 import MissionSection from "../components/sections/MissionSection"
 import BeliefSection from "../components/sections/BeliefSection"
+import StorySection from "../components/sections/StorySection"
 
 export default function AboutPage({ data: { wpPage: { title, aboutPage } } }) {
-  const { hero, mission, belief } = aboutPage
+  const { hero, mission, belief, story } = aboutPage
 
   return (
     <Layout>
@@ -17,6 +18,7 @@ export default function AboutPage({ data: { wpPage: { title, aboutPage } } }) {
       <Hero hero={hero} />
       <MissionSection mission={mission} />
       <BeliefSection belief={belief} />
+      <StorySection story={story} />
     </Layout>
   )
 }
@@ -34,7 +36,7 @@ export const data = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 800,
+                  width: 800
                   placeholder: BLURRED
                   layout: CONSTRAINED
                 )
@@ -52,7 +54,7 @@ export const data = graphql`
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 100,
+                    width: 100
                     placeholder: BLURRED
                     layout: CONSTRAINED
                   )
@@ -83,6 +85,53 @@ export const data = graphql`
           cards {
             description
             isLong
+          }
+        }
+        story {
+          heading
+          description
+          image {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 800
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                )
+              }
+            }
+          }
+        }
+        approaches {
+          heading
+          accordion {
+            heading
+            description
+          }
+          callToAction {
+            image {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 800
+                    placeholder: BLURRED
+                    layout: CONSTRAINED
+                  )
+                }
+              }
+            }
+            heading
+            description
+            linkText
+            pageLink {
+              ... on WpPage {
+                id
+                title
+                uri
+              }
+            }
           }
         }
       }

@@ -9,13 +9,13 @@ export default function MissionSection({ mission: { heading, cards, description,
   return (
     <MissionSectionStyles>
       <h2>{heading}</h2>
-      <div className="wrapper-cards">
+      <div className="wrapper wrapper-cards">
         {cards.map((card, index) => (
           <CardMission key={card.text} card={card} bgColor={bgColor[index]}/>
         ))}
       </div>
       {/* Mission Cards */}
-      <div className="wrapper-description">
+      <div className="wrapper wrapper-description">
         <p>{description}</p>
         {/* Call To Action */}
         <div className="wrapper-cta">
@@ -30,23 +30,18 @@ export default function MissionSection({ mission: { heading, cards, description,
 
 const MissionSectionStyles = styled.section`
   .wrapper-cards {
-    margin: 2rem 0;
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
     grid-gap: 20px;
   }
   .wrapper-description {
-    margin: 2rem 0;
     display: grid;
-    p {
-      white-space: pre-wrap;
-    }
+    grid-gap: 20px;
   }
   .wrapper-cta {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin: 2rem 0;
+    justify-content: space-evenly;
     text-align: center;
     & > * {
       margin: 0.5rem 0;
@@ -55,7 +50,6 @@ const MissionSectionStyles = styled.section`
 
   @media (min-width: 640px) {
     .wrapper-cards {
-      margin: 4rem 0;
       grid-gap: 3rem;
     }
     .wrapper-description {
