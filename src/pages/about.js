@@ -82,7 +82,7 @@ export const data = graphql`
           heading
           cards {
             description
-            islong
+            isLong
           }
         }
       }

@@ -20,7 +20,6 @@ const AccordionsStyles = styled.div`
 
   @media (min-width: 640px) {
     margin-bottom: 0;
-    margin-right: 5vw;
     h2 {
       margin-bottom: 2rem;
     }

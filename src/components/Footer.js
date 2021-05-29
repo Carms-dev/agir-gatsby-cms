@@ -39,7 +39,7 @@ export default function Footer() {
       <p>{address}</p>
       {/* TODO: add switcher */}
       <LanguageSwitcher />
-      <Link to="/contact">Contact us</Link>
+      <Link className="btn btn-primary" to="/contact">Contact us</Link>
       <SocialMediaIcons socialMedia={socialMedia} />
       <p>
         <span>© AGIR, {new Date().getFullYear()}.{` `}</span>
@@ -68,11 +68,6 @@ const FooterStyles = styled.footer`
   }
   a:nth-child(4) {
     grid-column: 1 / -1;
-    text-align: center;
-    background: var(--primary-alt);
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 4px;
   }
   div:nth-child(5) {
     grid-column: 1 / -1;

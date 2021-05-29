@@ -20,8 +20,8 @@ export default function MissionSection({ mission: { heading, cards, description,
         {/* Call To Action */}
         <div className="wrapper-cta">
           <h3>{callToAction.heading}</h3>
-          <Link to={callToAction.primaryPageLink.uri}>{callToAction.primaryPageLink.title}</Link>
-          <Link to={callToAction.secondaryPageLink.uri}>{callToAction.secondaryPageLink.title}</Link>
+          <Link className="btn btn-primary" to={callToAction.primaryPageLink.uri}>{callToAction.primaryPageLink.title}</Link>
+          <Link className="btn btn-secondary" to={callToAction.secondaryPageLink.uri}>{callToAction.secondaryPageLink.title}</Link>
         </div>
       </div>
     </MissionSectionStyles>
@@ -37,11 +37,19 @@ const MissionSectionStyles = styled.section`
   }
   .wrapper-description {
     margin: 2rem 0;
+    display: grid;
     p {
       white-space: pre-wrap;
     }
-    .wrapper-cta {
-      margin: 2rem 0;
+  }
+  .wrapper-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem 0;
+    text-align: center;
+    & > * {
+      margin: 0.5rem 0;
     }
   }
 
@@ -49,6 +57,10 @@ const MissionSectionStyles = styled.section`
     .wrapper-cards {
       margin: 4rem 0;
       grid-gap: 3rem;
+    }
+    .wrapper-description {
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 5rem;
     }
   }
 `

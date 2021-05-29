@@ -51,10 +51,12 @@ const AcoordionsIframeSectionStyles = styled.section`
   }
 
   @media (min-width: 640px) {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 3rem;
   }
 
   @media (min-width: 1280px) {
+    grid-gap: 5rem;
   }
 `
 

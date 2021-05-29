@@ -20,7 +20,6 @@ export default function Hero({ hero: { heading, description, image } }) {
 const HeroStyles = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
   text-align: center;
 
   & > * {
