@@ -18,24 +18,25 @@ export default function Hero({ hero: { heading, description, image } }) {
 }
 
 const HeroStyles = styled.section`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 2rem;
   text-align: center;
 
-  & > * {
-    margin-top: 20px;
-    flex: 1;
-  }
   h1 {
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
   }
+
   @media (min-width: 640px) {
-    flex-direction: row-reverse;
+    grid-template-columns: 2fr 3fr;
+    grid-auto-rows: 1fr;
     align-items: center;
     text-align: left;
+    direction: rtl;
+  }
 
-    div:last-child {
-      margin-right: 5vw;
+  @media (min-width: 1280px) {
+    .wrapper-content {
+      grid-gap: 6rem;
     }
   }
 
