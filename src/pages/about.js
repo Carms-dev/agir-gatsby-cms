@@ -8,9 +8,13 @@ import Hero from "../components/Hero"
 import MissionSection from "../components/sections/MissionSection"
 import BeliefSection from "../components/sections/BeliefSection"
 import StorySection from "../components/sections/StorySection"
+import ApproachSection from "../components/sections/ApproachSection"
+import EthicsSection from "../components/sections/EthicsSection"
+import LogoGarden from "../components/sections/LogoGarden"
+import ReportSection from "../components/sections/ReportSection"
 
 export default function AboutPage({ data: { wpPage: { title, aboutPage } } }) {
-  const { hero, mission, belief, story } = aboutPage
+  const { hero, mission, belief, story, approach, codeOfEthics, logoGarden, report } = aboutPage
 
   return (
     <Layout>
@@ -19,6 +23,10 @@ export default function AboutPage({ data: { wpPage: { title, aboutPage } } }) {
       <MissionSection mission={mission} />
       <BeliefSection belief={belief} />
       <StorySection story={story} />
+      <ApproachSection approach={approach} />
+      <EthicsSection ethics={codeOfEthics} />
+      <LogoGarden logoGarden={logoGarden} />
+      <ReportSection report={report} />
     </Layout>
   )
 }
@@ -36,7 +44,7 @@ export const data = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 800
+                  width: 600
                   placeholder: BLURRED
                   layout: CONSTRAINED
                 )
@@ -95,7 +103,7 @@ export const data = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 800
+                  width: 600
                   placeholder: BLURRED
                   layout: CONSTRAINED
                 )
@@ -103,7 +111,7 @@ export const data = graphql`
             }
           }
         }
-        approaches {
+        approach {
           heading
           accordion {
             heading
@@ -115,7 +123,7 @@ export const data = graphql`
               localFile {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 800
+                    width: 600
                     placeholder: BLURRED
                     layout: CONSTRAINED
                   )
@@ -131,6 +139,38 @@ export const data = graphql`
                 title
                 uri
               }
+            }
+          }
+        }
+        codeOfEthics {
+          heading
+          description
+          linkText
+          linkUrl
+        }
+        logoGarden {
+          heading
+          logos {
+            id
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 120
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                )
+              }
+            }
+          }
+        }
+        report {
+          heading
+          files {
+            file {
+              id
+              mediaItemUrl
+              title
             }
           }
         }

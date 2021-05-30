@@ -51,7 +51,7 @@ export default function ControlledAccordions({ items }) {
             <Typography className={classes.heading}>{item.heading}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {ReactHtmlParser(item.text)}
+            {ReactHtmlParser(item.description)}
           </AccordionDetails>
         </Accordion>
       ))}

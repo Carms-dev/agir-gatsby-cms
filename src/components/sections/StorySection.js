@@ -30,4 +30,10 @@ const StorySectiontyles = styled.section`
       align-items: center;
     }
   }
+
+  @media (min-width: 1280px) {
+    .wrapper-content {
+      grid-gap: 6rem;
+    }
+  }
 `

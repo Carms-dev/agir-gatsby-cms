@@ -77,7 +77,7 @@ const FooterStyles = styled.footer`
     grid-column: 1 / -1;
     a {
       padding: 2px 0;
-      border-bottom: 1px solid black;
+      text-decoration: underline;
     }
   }
   @media (min-width: 768px) {

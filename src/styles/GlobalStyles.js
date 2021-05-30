@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
   // Section
   section {
-    margin: 3rem 0;
+    margin: 3rem 0 5rem 0;
   }
   .wrapper {
     margin: 2rem 0;
@@ -91,6 +91,12 @@ const GlobalStyles = createGlobalStyle`
     }
     html {
       font-size: 18px;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
     }
   }
 `
