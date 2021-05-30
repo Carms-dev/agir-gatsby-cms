@@ -6,22 +6,27 @@ import styled from 'styled-components';
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 // import Hero from "../components/Hero"
-import Accordions from "../components/Accordions"
 
 export default function ContactPage({ data: { wpPage } }) {
-  const { title, contactPage: { contactAccordion , map} } = wpPage
+  const { title, contactPage: { map } } = wpPage
 
   return (
     <Layout>
       <Seo title={title} />
         {/* <Hero hero={hero}/> */}
+        {/* Contact Form */}
+        {/* Contact Info */}
+        {/* Accordion */}
+        {/* Stay Updated */}
         <AcoordionsIframeSectionStyles>
-          <Accordions
+          {/* <Accordions
             heading={contactAccordion.heading}
             items={contactAccordion.accordionAccordionItem}
-          />
+            /> */}
+          {/* Map */}
           <div className="wrapper-iframe">{ReactHtmlParser(map)}</div>
         </AcoordionsIframeSectionStyles>
+        {/* Stay Updated */}
     </Layout>
   )
 }
