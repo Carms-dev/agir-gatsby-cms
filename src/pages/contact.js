@@ -1,19 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ReactHtmlParser from 'react-html-parser';
+// import ReactHtmlParser from 'react-html-parser';
 import styled from 'styled-components';
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-// import Hero from "../components/Hero"
+import Hero from "../components/Hero"
 
-export default function ContactPage({ data: { wpPage } }) {
-  const { title, contactPage: { map } } = wpPage
+export default function ContactPage({ data: { wpPage: { title, contactPage } } }) {
+  const { hero } = contactPage
 
   return (
     <Layout>
       <Seo title={title} />
-        {/* <Hero hero={hero}/> */}
+        <Hero hero={hero}/>
         {/* Contact Form */}
         {/* Contact Info */}
         {/* Accordion */}
@@ -24,7 +24,7 @@ export default function ContactPage({ data: { wpPage } }) {
             items={contactAccordion.accordionAccordionItem}
             /> */}
           {/* Map */}
-          <div className="wrapper-iframe">{ReactHtmlParser(map)}</div>
+          {/* <div className="wrapper-iframe">{ReactHtmlParser(map)}</div> */}
         </AcoordionsIframeSectionStyles>
         {/* Stay Updated */}
     </Layout>
@@ -65,21 +65,28 @@ const AcoordionsIframeSectionStyles = styled.section`
   }
 `
 
-// Query contact page content
-export const query = graphql`
+export const data = graphql`
   query {
-    wpPage(title: {eq: "Contact"}) {
+    wpPage(slug: {eq: "contact"}) {
       title
       contactPage {
-        map
-        contactAccordion {
+        hero {
+          description
           heading
-          accordionAccordionItem {
-            heading
-            text
+          image {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 600
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                )
+              }
+            }
           }
         }
       }
     }
   }
-`;
+`

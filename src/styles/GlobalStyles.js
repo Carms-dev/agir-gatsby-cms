@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-weight: 700;
     color: var(--darker);
+    line-height: 1.15;
   }
   a {
     font-weight: 500;
@@ -93,7 +94,7 @@ const GlobalStyles = createGlobalStyle`
       font-size: 18px;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     h2 {
       font-size: 2rem;

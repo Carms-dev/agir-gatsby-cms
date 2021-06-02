@@ -1,7 +1,5 @@
 import * as React from "react"
 import styled from "styled-components"
-// import { RiHomeHeartFill } from 'react-icons/ri';
-
 
 export default function CardBelief({ card: { description, isLong }, Icon, iconColor }) {
   return (

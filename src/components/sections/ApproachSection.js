@@ -11,7 +11,6 @@ export default function ApproachSection({ approach: { heading, accordion, callTo
       <div className="wrapper wrapper-content">
         <ControlledAccordions items={accordion} />
         <CardPromote callToAction={callToAction} />
-
       </div>
     </ApproachSectionStyles>
   )
