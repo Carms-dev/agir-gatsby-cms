@@ -8,7 +8,7 @@ import ReactHtmlParser from 'react-html-parser';
 const useStyles = makeStyles(() => ({
   btnModal: {
     color: `var(--primary-alt)`,
-    borderBottom: `2px solid var(--primary-alt)`,
+    textDecoration: `underline`,
   },
   modal: {
     display: 'flex',

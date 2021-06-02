@@ -1,27 +1,32 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ReactHtmlParser from 'react-html-parser';
+// import ReactHtmlParser from 'react-html-parser';
 import styled from 'styled-components';
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import MainHero from "../components/MainHero"
-import Accordions from "../components/Accordions"
+import Hero from "../components/Hero"
 
-export default function ContactPage({ data: { wpPage } }) {
-  const { title, mainHero, contactPage: { contactAccordion , map} } = wpPage
+export default function ContactPage({ data: { wpPage: { title, contactPage } } }) {
+  const { hero } = contactPage
 
   return (
     <Layout>
       <Seo title={title} />
-        <MainHero hero={mainHero} />
+        <Hero hero={hero}/>
+        {/* Contact Form */}
+        {/* Contact Info */}
+        {/* Accordion */}
+        {/* Stay Updated */}
         <AcoordionsIframeSectionStyles>
-          <Accordions
+          {/* <Accordions
             heading={contactAccordion.heading}
             items={contactAccordion.accordionAccordionItem}
-          />
-          <div className="wrapper-iframe">{ReactHtmlParser(map)}</div>
+            /> */}
+          {/* Map */}
+          {/* <div className="wrapper-iframe">{ReactHtmlParser(map)}</div> */}
         </AcoordionsIframeSectionStyles>
+        {/* Stay Updated */}
     </Layout>
   )
 }
@@ -51,44 +56,37 @@ const AcoordionsIframeSectionStyles = styled.section`
   }
 
   @media (min-width: 640px) {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 3rem;
   }
 
   @media (min-width: 1280px) {
+    grid-gap: 5rem;
   }
 `
 
-// Query contact page content
-export const query = graphql`
+export const data = graphql`
   query {
-    wpPage(title: {eq: "Contact"}) {
+    wpPage(slug: {eq: "contact"}) {
       title
-      mainHero {
-        heroHeading
-        heroDescription
-        heroImage {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 800,
-                placeholder: BLURRED
-                layout: CONSTRAINED
-              )
-            }
-          }
-        }
-      }
       contactPage {
-        map
-        contactAccordion {
+        hero {
+          description
           heading
-          accordionAccordionItem {
-            heading
-            text
+          image {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 600
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                )
+              }
+            }
           }
         }
       }
     }
   }
-`;
+`

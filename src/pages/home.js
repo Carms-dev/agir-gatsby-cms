@@ -1,47 +1,45 @@
 import React from "react"
 import { Link } from "gatsby"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+import Hero from "../components/Hero"
 
-import MainHero from "../components/MainHero"
-
-export default function HomePage() {
-  const { title, wpPage: { mainHero }} = useStaticQuery(
-    graphql`
-      query {
-        wpPage(title: {eq: "Home"}) {
-          title
-          mainHero {
-            heroHeading
-            heroDescription
-            heroImage {
-              altText
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 800,
-                    placeholder: BLURRED
-                    layout: CONSTRAINED
-                  )
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-
+export default function HomePage({ data: { wpPage: { title, homePage } } }) {
+  const { hero } = homePage
 
   return (
     <Layout>
       <Seo title={title} />
-      <MainHero hero={mainHero}/>
+      <Hero hero={hero}/>
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )
 }
 
-
+export const data = graphql`
+  query {
+    wpPage(slug: {eq: "home"}) {
+      title
+      homePage {
+        hero {
+          description
+          heading
+          image {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 600
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
