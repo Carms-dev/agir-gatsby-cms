@@ -1,46 +1,22 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import styled from 'styled-components'
 
 import Logo from './Logo'
 import LanguageSwitcher from './LanguageSwitcher'
-import SocialMediaIcons from './SocialMediaIcons'
+// import SocialMediaIcons from './SocialMediaIcons'
 
 export default function Footer() {
   // get contact info from contact page
-  const { wpPage: { contactPage: { address, socialMedia } } } = useStaticQuery(graphql`
-    query {
-      wpPage(title: {eq: "Contact"}) {
-        contactPage {
-          address
-          socialMedia {
-            url
-            icon {
-              altText
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 30,
-                    placeholder: BLURRED
-                    layout: CONSTRAINED
-                  )
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <FooterStyles>
       <Logo />
-      <p>{address}</p>
+      {/* <p>{address}</p> */}
       {/* TODO: add switcher */}
       <LanguageSwitcher />
       <Link className="btn btn-primary" to="/contact">Contact us</Link>
-      <SocialMediaIcons socialMedia={socialMedia} />
+      {/* <SocialMediaIcons socialMedia={socialMedia} /> */}
       <p>
         <span>© AGIR, {new Date().getFullYear()}.{` `}</span>
         <Link to="/privacy">Privacy policy</Link>

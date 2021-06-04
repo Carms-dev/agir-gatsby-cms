@@ -1,19 +1,20 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 // import ReactHtmlParser from 'react-html-parser';
 import styled from 'styled-components';
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
-import Hero from "../components/Hero"
+// import Hero from "../components/Hero"
 
-export default function ContactPage({ data: { wpPage: { title, contactPage } } }) {
-  const { hero } = contactPage
+export default function ContactPage() {
+  // { data: { wpPage: { title, contactPage } } }
+  // const { hero } = contactPage
 
   return (
     <Layout>
-      <Seo title={title} />
-        <Hero hero={hero}/>
+      <Seo title="Contact" />
+        {/* <Hero hero={hero}/> */}
         {/* Contact Form */}
         {/* Contact Info */}
         {/* Accordion */}
@@ -62,31 +63,5 @@ const AcoordionsIframeSectionStyles = styled.section`
 
   @media (min-width: 1280px) {
     grid-gap: 5rem;
-  }
-`
-
-export const data = graphql`
-  query {
-    wpPage(slug: {eq: "contact"}) {
-      title
-      contactPage {
-        hero {
-          description
-          heading
-          image {
-            altText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 600
-                  placeholder: BLURRED
-                  layout: CONSTRAINED
-                )
-              }
-            }
-          }
-        }
-      }
-    }
   }
 `

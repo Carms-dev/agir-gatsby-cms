@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 export default function DonatePage() {
   return (
     <Layout>
-      <Seo title="Donate | AGIR Montreal" />
+      <Seo title="Donate" />
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )

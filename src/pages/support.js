@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 export default function SupportPage() {
   return (
     <Layout>
-      <Seo title="Support | AGIR Montreal" />
+      <Seo title="Support" />
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )

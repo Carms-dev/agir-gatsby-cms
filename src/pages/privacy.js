@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 export default function PrivacyPage() {
   return (
     <Layout>
-      <Seo title="Privacy Policy | AGIR Montreal" />
+      <Seo title="Privacy Policy" />
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )
