@@ -29,11 +29,8 @@ const Header = () => {
   const classes = useStyles();
   
   const navLinks = [
-    { title: `about us`, path: `/about-us` },
-    { title: `product`, path: `/product` },
-    { title: `blog`, path: `/blog` },
-    { title: `contact`, path: `/contact` },
-    { title: `faq`, path: `/faq` },
+    { title: `About Us`, path: `/about` },
+    { title: `Contact`, path: `/contact` },
   ]
 
   return (

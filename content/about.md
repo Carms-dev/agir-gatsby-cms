@@ -10,7 +10,7 @@ hero:
       is wearing a t-shirt with the nonbinary flag, one is wearing a bracelet
       with the trans flag and holding a sign saying "Trans rights are human
       rights", and one is holding the bisexual flag.
-    image: /img/agir_advocacy.png
+    imageFile: /assets/agir_advocacy.png
 mission:
   heading: Our Mission
   description: >-

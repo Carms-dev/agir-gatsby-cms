@@ -8,6 +8,6 @@ hero:
   image:
     alt: Illustration of five LGBTQIA+ immigrants and refugees holding hands in
       front of a globe. One of the people is in a wheelchair.
-    image: /assets/agir_landing.png
+    imageFile: /assets/agir_landing.png
   heading: LGBTQIA+ Migrant & Refugee Support in Montréal
 ---

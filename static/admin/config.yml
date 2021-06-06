@@ -53,7 +53,7 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Description, name: description, widget: text}
-              - {label: Image, name: image, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}
+              - {label: Image, name: image, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
 
       - file: "content/about.md"
         label: "About Page"
@@ -67,7 +67,7 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Description, name: description, widget: text}
-              - {label: Image, name: image, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}
+              - {label: Image, name: image, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
           - label: Mission
             name: mission
             widget: object
@@ -113,7 +113,7 @@ collections:
             fields:
               - {label: Heading, name: heading, widget: string}
               - {label: Description, name: description, widget: text}
-              - {label: Image, name: image, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}
+              - {label: Image, name: image, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
 
       - file: "content/products/index.md"
         label: "Products Page"
