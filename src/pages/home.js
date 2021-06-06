@@ -6,8 +6,8 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Hero from "../components/Hero"
 
-export default function HomePage({ data: { wpPage: { title, homePage } } }) {
-  const { hero } = homePage
+export default function HomePage({ data: { file: { childMarkdownRemark: { frontmatter }} } }) {
+  const { title, hero } = frontmatter
 
   return (
     <Layout>
@@ -20,21 +20,23 @@ export default function HomePage({ data: { wpPage: { title, homePage } } }) {
 
 export const data = graphql`
   query {
-    wpPage(slug: {eq: "home"}) {
-      title
-      homePage {
-        hero {
-          description
-          heading
-          image {
-            altText
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 600
-                  placeholder: BLURRED
-                  layout: CONSTRAINED
-                )
+    file(name: {eq: "home"}) {
+      childMarkdownRemark {
+        frontmatter {
+          title
+          hero {
+            heading
+            description
+            image {
+              alt
+              imageFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 590
+                    placeholder: BLURRED
+                    layout: CONSTRAINED
+                  )
+                }
               }
             }
           }

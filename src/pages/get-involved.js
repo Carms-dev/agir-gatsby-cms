@@ -7,7 +7,7 @@ import Seo from "../components/Seo"
 export default function GetInvolvedPage() {
   return (
     <Layout>
-      <Seo title="Get Involved | AGIR Montreal" />
+      <Seo title="Get Involved" />
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )

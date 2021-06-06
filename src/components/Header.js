@@ -1,6 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 
 import Logo from "./Logo"
 import SideDrawer from "./SideDrawer"
@@ -27,23 +27,11 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles();
-
-  const { wpMenu: { menuItems } } = useStaticQuery(graphql`
-    query MenuQuery {
-      wpMenu(slug: {eq: "main-menu"}) {
-        menuItems {
-          nodes {
-            id
-            label
-            path
-            parentId
-          }
-        }
-      }
-    }
-  `)
-
-  const navLinks = menuItems.nodes
+  
+  const navLinks = [
+    { title: `About Us`, path: `/about` },
+    { title: `Contact`, path: `/contact` },
+  ]
 
   return (
     <AppBar position="static" style={{ background: `var(--off-white)` }}>
@@ -58,10 +46,10 @@ const Header = () => {
               aria-labelledby="main navigation"
               className={classes.navDisplayFlex}
             >
-              {navLinks.map(({ id, label, path }) => (
-                <a href={path} key={id} className={classes.linkText}>
+              {navLinks.map(({ title, path }) => (
+                <a href={path} key={title} className={classes.linkText}>
                   <ListItem button>
-                    <ListItemText primary={label} />
+                    <ListItemText primary={title} />
                   </ListItem>
                 </a>
               ))}

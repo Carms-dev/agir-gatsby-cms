@@ -1,0 +1,131 @@
+backend:
+  name: github
+  repo: Carms-dev/agir-gatsby-cms
+  branch: netlify-cms # Branch to update (optional; defaults to master)
+  commit_messages:
+    create: '[ADD][CMS] {{collection}} “{{slug}}”'
+    update: '[UPD][CMS] {{collection}} “{{slug}}”'
+    delete: '[REM][CMS] {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: "announcements"
+    label: "Announcements"
+    folder: "content/announcements"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "announcement-bar"}
+      - {label: Title, name: title, widget: string}
+      - {label: Content, name: content, widget: markdown}
+      - {label: "Button Modal Trigger", name: button, widget: object, fields: [{label: "Button Text", name: buttonText, widget: string}, {label: "Button Url", name: buttonUrl, widget: string}]}
+      - {label: "Active?", name: isActive, widget: boolean}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Subheading, name: subheading, widget: string}
+          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Description, name: description, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+
+      - file: "content/home.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Image, name: image, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
+
+      - file: "content/about.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Image, name: image, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
+          - label: Mission
+            name: mission
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - label: Cards
+                name: cards
+                widget: list
+                min: 3
+                max: 3
+                fields: 
+                  - {label: icon, name: icon, widget: image}
+                  - {label: Description, name: description, widget: text}
+              - {label: Description, name: description, widget: text}
+              - label: "Call To Action"
+                name: callToAction
+                widget: object
+                fields:
+                  - {label: Heading, name: heading, widget: string}
+                  - {label: "Button Primary", name: buttonPrimary, widget: object, fields: [{label: "Button Text", name: buttonText, widget: string}, {label: "Button Url", name: buttonUrl, widget: string}]}
+                  - {label: "Button Secondary", name: buttonSecondary, widget: object, fields: [{label: "Button Text", name: buttonText, widget: string}, {label: "Button Url", name: buttonUrl, widget: string}]}
+          - label: Belief
+            name: belief
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - label: Cards
+                name: cards
+                widget: list
+                fields: 
+                  - {label: Description, name: description, widget: text}
+                  - {label: "Long Card?", name: isLong, widget: boolean, required: false}
+
+      - file: "content/contact.md"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Image, name: image, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
+
+      - file: "content/products/index.md"
+        label: "Products Page"
+        name: "products"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+          - {label: Title, name: title, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Description, name: description, widget: string}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
+          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
+          - {label: Full_image, name: full_image, widget: image}
+          - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}

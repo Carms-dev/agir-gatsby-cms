@@ -7,7 +7,7 @@ import Seo from "../../components/Seo"
 export default function OutsideMontrealPage() {
   return (
     <Layout>
-      <Seo title="Outside Montreal | AGIR Montreal" />
+      <Seo title="Outside Montreal" />
       <Link to="/">Go back to Landing</Link>
     </Layout>
   )
