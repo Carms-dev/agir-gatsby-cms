@@ -2,9 +2,7 @@
 
 [Old Site](https://www.agirmontreal.org/)
 
-[Testing Env (WP CMS)](https://www.agirtest.club/)
-
-[Staging (Gatsby)](https://agirtest.netlify.app/)
+[Staging](https://agir.netlify.app/)
 
 [Wireframe (Figma)](https://www.figma.com/file/e7Vr5LWLSoqP7bGL75URrp/Mobile-Prototype_V2?node-id=141%3A488)
 
