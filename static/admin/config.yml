@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Carms-dev/agir-gatsby-cms
-  branch: netlify-cms # Branch to update (optional; defaults to master)
+  # branch: netlify-cms # Branch to update (optional; defaults to master)
   commit_messages:
     create: '[ADD][CMS] {{collection}} “{{slug}}”'
     update: '[UPD][CMS] {{collection}} “{{slug}}”'
@@ -33,7 +33,7 @@ collections:
         fields:
           - {label: "Organization Name", name: orgName, widget: string}
           - {label: Logo, name: logo, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
-          - {label: Favicon, name: favicon, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
+          - {label: Favicon, name: favicon, widget: image}
           - {label: Address, name: address, widget: "map"}
 
   - name: "pages"
