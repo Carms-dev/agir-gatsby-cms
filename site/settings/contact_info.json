@@ -1,0 +1,16 @@
+{
+  "orgName": "AGIR Montreal",
+  "logo": {
+    "imageFile": "/assets/agir_logo-60x60.png",
+    "alt": "AGIR Logo"
+  },
+  "favicon": "/assets/favicon.ico",
+  "location": "{\"type\":\"Point\",\"coordinates\":[12.1113281,-2.416275]}",
+  "address": {
+    "street": "123 street",
+    "city": "Montreal",
+    "province": "Quebec",
+    "country": "Canada",
+    "postalCode": "H22222"
+  }
+}
