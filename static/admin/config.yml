@@ -23,13 +23,25 @@ collections:
       - {label: Content, name: content, widget: markdown}
       - {label: "Button Modal Trigger", name: button, widget: object, fields: [{label: "Button Text", name: buttonText, widget: string}, {label: "Button Url", name: buttonUrl, widget: string}]}
       - {label: "Active?", name: isActive, widget: boolean}
+  
+  - name: settings
+    label: Settings
+    files:
+      - file: "content/orginfo.md"
+        label: "Organization Information"
+        name: orgInfo
+        fields:
+          - {label: "Organization Name", name: orgName, widget: string}
+          - {label: Logo, name: logo, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
+          - {label: Favicon, name: favicon, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
+          - {label: Address, name: address, widget: "map"}
 
   - name: "pages"
     label: "Pages"
     files:
       - file: "content/index.md"
         label: "Landing Page"
-        name: "index"
+        name: index
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Title, name: title, widget: string}
@@ -43,7 +55,7 @@ collections:
 
       - file: "content/home.md"
         label: "Home Page"
-        name: "home"
+        name: home
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Title", name: "title", widget: "string"}
@@ -57,7 +69,7 @@ collections:
 
       - file: "content/about.md"
         label: "About Page"
-        name: "about"
+        name: about
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
@@ -103,7 +115,7 @@ collections:
 
       - file: "content/contact.md"
         label: "Contact Page"
-        name: "contact"
+        name: contact
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
           - {label: "Title", name: "title", widget: "string"}
@@ -117,7 +129,7 @@ collections:
 
       - file: "content/products/index.md"
         label: "Products Page"
-        name: "products"
+        name: products
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
           - {label: Title, name: title, widget: string}
