@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: Carms-dev/agir-gatsby-cms
   # branch: netlify-cms # Branch to update (optional; defaults to master)
   commit_messages:
@@ -27,14 +27,24 @@ collections:
   - name: settings
     label: Settings
     files:
-      - file: "content/orginfo.md"
-        label: "Organization Information"
-        name: orgInfo
+      - file: site/settings/contact_info.json
+        label: "Contact Info"
+        name: contactInfo
         fields:
           - {label: "Organization Name", name: orgName, widget: string}
           - {label: Logo, name: logo, widget: object, fields: [{label: "Image File", name: imageFile, widget: image}, {label: Alt, name: alt, widget: string}]}
           - {label: Favicon, name: favicon, widget: image}
-          - {label: Address, name: address, widget: "map"}
+          - {label: Location, name: location, widget: map}
+          - label: Address
+            name: address
+            widget: object
+            fields:
+              - {label: Street, name: street, widget: string}
+              - {label: Street2, name: street2, widget: string, required: false}
+              - {label: City, name: city, widget: string}
+              - {label: Province, name: province, widget: string}
+              - {label: Country, name: country, widget: string}
+              - {label: "Postal Code", name: postalCode, widget: string}
 
   - name: "pages"
     label: "Pages"
